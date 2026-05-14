@@ -1,1 +1,12 @@
-pandas
+# =============================================================================
+# Sales Data Processing Dependencies
+# =============================================================================
+# This file contains all Python dependencies for the Sample Sales Data project.
+# Install with: pip install -r requirements.txt
+#
+# Project Purpose: Process sales data from CSV files, normalize into relational
+# tables, and generate SQL insert statements for database population.
+# =============================================================================
+
+# Data manipulation and analysis
+pandas>=2.2.0,<3.0.0  # Core library for CSV processing and data transformation
