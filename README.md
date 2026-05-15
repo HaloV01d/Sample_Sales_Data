@@ -17,6 +17,7 @@ A data engineering project that transforms raw sales data from Kaggle into a nor
   - [Step 2: Database Setup](#step-2-database-setup)
   - [Step 3: SQL Import](#step-3-sql-import)
   - [Step 4: Validation](#step-4-validation)
+- [Web Application](#web-application)
 - [Database Schema](#database-schema)
 - [Technologies](#technologies)
 - [Project Status](#project-status)
@@ -205,6 +206,133 @@ SELECT COUNT(*) FROM Order_Line;           -- Expected: 2823
 | Order_Line               | 2,823         |
 
 ✅ If all counts match, your database is successfully set up!
+
+---
+
+## 🌐 Web Application
+
+A comprehensive PHP web application is included to visualize and interact with the database through a user-friendly interface.
+
+### Features
+
+- 📊 **E/R Diagram Viewer** - Display and download Entity-Relationship diagrams
+- 🗂️ **Database Schema Documentation** - Complete attribute descriptions with data types and constraints
+- 📋 **Interactive Data Browser** - View and search data from all tables
+- 🔌 **XAMPP Integration** - Direct connection to MySQL database with status monitoring
+- 📱 **Responsive Design** - Mobile-friendly interface with modern styling
+
+### Quick Start
+
+#### Option 1: Automatic Setup (Recommended)
+
+1. **Copy web application to XAMPP:**
+   ```bash
+   # Copy the entire project to XAMPP's htdocs folder
+   cp -r Sample_Sales_Data C:\xampp\htdocs\
+   ```
+
+2. **Start XAMPP services:**
+   - Launch XAMPP Control Panel
+   - Start Apache and MySQL
+
+3. **Run automated setup:**
+   - Navigate to: `http://localhost/Sample_Sales_Data/src/setup.php`
+   - The script will automatically create the database and import all tables
+   - Click "Go to Application" when complete
+
+4. **Access the application:**
+   - URL: `http://localhost/Sample_Sales_Data/src/`
+
+#### Option 2: Manual Setup
+
+If you've already created the database manually (following steps in previous section):
+
+1. **Deploy web files:**
+   ```bash
+   # Copy to XAMPP directory
+   cp -r src C:\xampp\htdocs\Sample_Sales_Data\
+   cp -r diagram C:\xampp\htdocs\Sample_Sales_Data\
+   ```
+
+2. **Configure database connection (if needed):**
+   - Edit `src/config.php`
+   - Update credentials if you changed MySQL defaults:
+   ```php
+   define('DB_HOST', 'localhost');
+   define('DB_USER', 'root');
+   define('DB_PASS', '');  // Add password if set
+   define('DB_NAME', 'sales_data');
+   ```
+
+3. **Access the application:**
+   - URL: `http://localhost/Sample_Sales_Data/src/`
+
+### Application Structure
+
+```
+src/
+├── index.php          # Main entry point with navigation
+├── config.php         # Database configuration
+├── setup.php          # Automated setup script
+├── styles.css         # Responsive CSS styling
+├── .htaccess          # Apache configuration
+├── README.md          # Detailed web app documentation
+└── pages/
+    ├── home.php       # Dashboard with statistics
+    ├── er_diagram.php # E/R diagram viewer
+    ├── schema.php     # Schema documentation
+    └── view_data.php  # Interactive data browser
+```
+
+### Screenshots & Features
+
+#### Dashboard
+- Real-time database statistics
+- Quick access to all features
+- Connection status monitoring
+- Setup instructions and troubleshooting
+
+#### E/R Diagram Viewer
+- High-resolution diagram display
+- Detailed relationship explanations
+- Download options (PNG/PDF)
+- Entity and constraint documentation
+
+#### Schema Documentation
+- All 9 tables with complete descriptions
+- Attribute details with data types
+- Primary and foreign key indicators
+- Relationship summary
+
+#### Data Browser
+- Select any table from dropdown
+- View up to 100 rows per table
+- Column information display
+- SQL query information
+- Responsive table design
+
+### Troubleshooting
+
+**Connection Failed:**
+- Ensure MySQL is running in XAMPP
+- Verify database name is exactly `sales_data`
+- Check credentials in `config.php`
+
+**E/R Diagram Not Showing:**
+- Verify `diagram/` folder is in correct location
+- Check image file exists: `diagram/Sample Sales ER Diagram.png`
+
+**No Data Displaying:**
+- Confirm all SQL files were imported
+- Check import order was followed
+- Verify tables exist in `sales_data` database
+
+**404 Error:**
+- Check Apache is running
+- Verify folder structure: `C:\xampp\htdocs\Sample_Sales_Data\src\`
+- Clear browser cache
+
+For more details, see [src/README.md](src/README.md)
 
 ---
 

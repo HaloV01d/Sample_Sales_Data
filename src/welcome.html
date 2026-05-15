@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Sales Data Management System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .welcome-container {
+            max-width: 800px;
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            color: #666;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: left;
+            border-radius: 8px;
+        }
+        
+        .info-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .info-box li {
+            padding: 8px 0;
+            color: #555;
+        }
+        
+        .info-box li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            background: #e9ecef;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .step.active {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="icon">🗄️</div>
+        <h1>Sales Data Management System</h1>
+        <p>
+            Welcome! This is a comprehensive database management system for analyzing sales data.
+            The application includes E/R diagrams, schema documentation, and interactive data browsing.
+        </p>
+        
+        <div class="info-box">
+            <h3>What You Can Do:</h3>
+            <ul>
+                <li>View Entity-Relationship diagrams</li>
+                <li>Explore complete database schema documentation</li>
+                <li>Browse and search data across all tables</li>
+                <li>Analyze relationships and constraints</li>
+                <li>Download diagrams and documentation</li>
+            </ul>
+        </div>
+        
+        <div class="button-group">
+            <a href="src/setup.php" class="btn btn-primary">
+                🚀 Start Setup
+            </a>
+            <a href="src/index.php" class="btn btn-secondary">
+                📊 Go to Application
+            </a>
+        </div>
+        
+        <div class="step-indicator">
+            <div class="step active">Step 1: Setup</div>
+            <div class="step">Step 2: Import Data</div>
+            <div class="step">Step 3: Explore</div>
+        </div>
+        
+        <div class="info-box" style="margin-top: 40px;">
+            <h3>Quick Setup:</h3>
+            <ul>
+                <li>Ensure XAMPP Apache and MySQL are running</li>
+                <li>Click "Start Setup" to automatically create the database</li>
+                <li>Wait for import to complete (takes ~1 minute)</li>
+                <li>Click "Go to Application" when ready</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
